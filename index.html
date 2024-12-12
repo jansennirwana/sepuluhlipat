@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sepuluhlipat | Grow Your Wealth</title>
+    <title>Sepuluhlipat | Invest Smarter</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
             padding: 0;
         }
         header {
-            background-color: #0b3d91;
+            background-color: #022c43;
             color: white;
             padding: 20px 40px;
             display: flex;
@@ -19,58 +19,76 @@
             align-items: center;
         }
         header .logo {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
         }
         header nav a {
             color: white;
             margin-left: 20px;
             text-decoration: none;
+            font-size: 16px;
         }
         section.hero {
-            background-color: #f0f4f8;
-            padding: 100px 40px;
+            background-image: url('https://via.placeholder.com/1500x800');
+            background-size: cover;
+            background-position: center;
+            color: white;
             text-align: center;
+            padding: 120px 40px;
         }
         section.hero h1 {
-            font-size: 48px;
-            color: #0b3d91;
+            font-size: 56px;
+            font-weight: bold;
         }
         section.hero p {
-            font-size: 20px;
-            margin-top: 20px;
+            font-size: 24px;
+            margin: 20px 0;
         }
         section.hero .cta-button {
             margin-top: 30px;
-            background-color: #0b3d91;
+            background-color: #38a1db;
             color: white;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 15px 40px;
+            font-size: 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            text-transform: uppercase;
         }
-        section.features {
-            display: flex;
-            justify-content: space-around;
+        section.steps {
             padding: 80px 40px;
-            background-color: #ffffff;
+            background-color: #f4f7fa;
         }
-        .feature {
+        .step-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .step {
             max-width: 300px;
             text-align: center;
+            margin: 20px;
         }
-        .feature h3 {
-            color: #0b3d91;
+        .step img {
+            width: 100px;
+            margin-bottom: 20px;
         }
-        .feature p {
+        .step h3 {
+            font-size: 20px;
+            color: #022c43;
+        }
+        .step p {
             color: #555;
         }
         footer {
-            background-color: #0b3d91;
+            background-color: #022c43;
             color: white;
             padding: 40px;
             text-align: center;
+        }
+        footer a {
+            color: #38a1db;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -79,35 +97,41 @@
         <div class="logo">Sepuluhlipat</div>
         <nav>
             <a href="#">Home</a>
-            <a href="#">Features</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
+            <a href="#">How It Works</a>
+            <a href="#">Pricing</a>
+            <a href="#">Sign Up</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Grow Your Wealth by Tenfold</h1>
-        <p>Smart investing made simple. Let Sepuluhlipat guide you toward your financial goals.</p>
+        <h1>Invest Smarter, Live Better</h1>
+        <p>With Sepuluhlipat, your financial goals are just a few clicks away.</p>
         <button class="cta-button">Get Started</button>
     </section>
 
-    <section class="features">
-        <div class="feature">
-            <h3>Automated Investing</h3>
-            <p>Save time and maximize your returns with our advanced algorithms.</p>
-        </div>
-        <div class="feature">
-            <h3>Personalized Plans</h3>
-            <p>Tailored strategies that adapt to your financial needs and goals.</p>
-        </div>
-        <div class="feature">
-            <h3>Transparent Pricing</h3>
-            <p>No hidden fees. Just simple, straightforward costs.</p>
+    <section class="steps">
+        <h2 style="text-align: center; color: #022c43;">How It Works</h2>
+        <div class="step-container">
+            <div class="step">
+                <img src="https://via.placeholder.com/100" alt="Step 1">
+                <h3>Create Your Account</h3>
+                <p>Sign up in minutes and set your financial goals with ease.</p>
+            </div>
+            <div class="step">
+                <img src="https://via.placeholder.com/100" alt="Step 2">
+                <h3>Choose Your Plan</h3>
+                <p>Pick a plan that fits your needs and start investing.</p>
+            </div>
+            <div class="step">
+                <img src="https://via.placeholder.com/100" alt="Step 3">
+                <h3>Track Your Growth</h3>
+                <p>Monitor your investments and watch your wealth grow.</p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Sepuluhlipat. All rights reserved.</p>
+        <p>&copy; 2024 Sepuluhlipat. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 </body>
 </html>
