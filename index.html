@@ -4,7 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sepuluhlipat | Smarter Investing</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #022c43;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 800px;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            flex-direction: column;
+        }
+        .swiper-slide h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .swiper-slide p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .swiper-slide button {
+            background-color: #38a1db;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .swiper-slide button:hover {
+            background-color: #02618b;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 20px;
+            background-color: #f4f7fa;
+        }
+        .feature {
+            max-width: 300px;
+            text-align: center;
+        }
+        .feature img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        .feature h3 {
+            color: #022c43;
+            margin-bottom: 10px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .footer-links a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #022c43;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,34 +119,33 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-carousel">
-            <div class="hero-item" style="background-image: url('Carousel-1-Stock Optimizer.jpeg');">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image: url('Carousel-1-Stock Optimizer.jpeg');">
                 <h1>Optimize Your Portfolio</h1>
                 <p>Maximize your stock performance with intelligent algorithms.</p>
                 <button>Learn More</button>
             </div>
-            <div class="hero-item" style="background-image: url('Carousel-2-Money Management.jpeg');">
+            <div class="swiper-slide" style="background-image: url('Carousel-2-Money Management.jpeg');">
                 <h1>Manage Your Finances</h1>
                 <p>Track and control your spending with ease.</p>
                 <button>Get Started</button>
             </div>
-            <div class="hero-item" style="background-image: url('Carousel-3-Self Productivity.jpeg');">
+            <div class="swiper-slide" style="background-image: url('Carousel-3-Self Productivity.jpeg');">
                 <h1>Boost Productivity</h1>
                 <p>Stay focused and achieve more with our tools.</p>
                 <button>Discover More</button>
             </div>
-            <div class="hero-item" style="background-image: url('Carousel-4-Investment.jpeg');">
+            <div class="swiper-slide" style="background-image: url('Carousel-4-Investment.jpeg');">
                 <h1>Smart Investing</h1>
                 <p>Grow your wealth with diversified investments.</p>
                 <button>Start Now</button>
             </div>
         </div>
-        <div class="carousel-controls">
-            <button class="prev-btn">&#8249;</button>
-            <button class="next-btn">&#8250;</button>
-        </div>
-    </section>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
 
     <section class="features">
         <div class="feature">
@@ -73,6 +174,22 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+            },
+        });
+    </script>
 </body>
 </html>
