@@ -35,22 +35,37 @@
             text-decoration: underline;
         }
         .hero {
-            background-image: url('https://via.placeholder.com/1500x800');
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 800px;
+        }
+        .hero-carousel {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+        .hero-item {
+            flex: 1;
+            height: 100%;
             background-size: cover;
             background-position: center;
-            color: white;
             text-align: center;
-            padding: 100px 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        .hero h1 {
+        .hero-item h1 {
             font-size: 3rem;
             margin-bottom: 20px;
         }
-        .hero p {
+        .hero-item p {
             font-size: 1.5rem;
             margin-bottom: 30px;
         }
-        .hero button {
+        .hero-item button {
             background-color: #38a1db;
             color: white;
             border: none;
@@ -59,24 +74,23 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .hero button:hover {
+        .hero-item button:hover {
             background-color: #02618b;
         }
-        .carousel {
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
             display: flex;
-            overflow: hidden;
-            margin: 40px 0;
+            justify-content: space-between;
+            transform: translateY(-50%);
         }
-        .carousel-item {
-            flex: 1;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.5s ease;
-        }
-        .carousel-item img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
+        .carousel-controls button {
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
         }
         .features {
             display: flex;
@@ -116,6 +130,20 @@
             padding: 20px 0;
         }
     </style>
+    <script>
+        let currentIndex = 0;
+        function showNextSlide() {
+            const carousel = document.querySelector('.hero-carousel');
+            currentIndex = (currentIndex + 1) % 4;
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        function showPrevSlide() {
+            const carousel = document.querySelector('.hero-carousel');
+            currentIndex = (currentIndex - 1 + 4) % 4;
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        setInterval(showNextSlide, 5000);
+    </script>
 </head>
 <body>
     <header>
@@ -129,26 +157,31 @@
     </header>
 
     <section class="hero">
-        <h1>Invest Smarter, Live Better</h1>
-        <p>Smart tools to grow your wealth effortlessly.</p>
-        <button>Get Started</button>
-    </section>
-
-    <section class="carousel">
-        <div class="carousel-item">
-            <img src="https://via.placeholder.com/400x200" alt="Feature 1">
-            <h3>Easy Investing</h3>
-            <p>Start with as little as $5 and let your money grow over time.</p>
+        <div class="hero-carousel">
+            <div class="hero-item" style="background-image: url('https://via.placeholder.com/1500x800?text=Stock+Optimizer');">
+                <h1>Optimize Your Portfolio</h1>
+                <p>Maximize your stock performance with intelligent algorithms.</p>
+                <button>Learn More</button>
+            </div>
+            <div class="hero-item" style="background-image: url('https://via.placeholder.com/1500x800?text=Money+Management');">
+                <h1>Manage Your Finances</h1>
+                <p>Track and control your spending with ease.</p>
+                <button>Get Started</button>
+            </div>
+            <div class="hero-item" style="background-image: url('https://via.placeholder.com/1500x800?text=Self+Productivity');">
+                <h1>Boost Productivity</h1>
+                <p>Stay focused and achieve more with our tools.</p>
+                <button>Discover More</button>
+            </div>
+            <div class="hero-item" style="background-image: url('https://via.placeholder.com/1500x800?text=Investment');">
+                <h1>Smart Investing</h1>
+                <p>Grow your wealth with diversified investments.</p>
+                <button>Start Now</button>
+            </div>
         </div>
-        <div class="carousel-item">
-            <img src="https://via.placeholder.com/400x200" alt="Feature 2">
-            <h3>Smart Portfolios</h3>
-            <p>Our experts build the best investment options for your goals.</p>
-        </div>
-        <div class="carousel-item">
-            <img src="https://via.placeholder.com/400x200" alt="Feature 3">
-            <h3>Secure & Trusted</h3>
-            <p>Your investments are protected and backed by secure technology.</p>
+        <div class="carousel-controls">
+            <button onclick="showPrevSlide()">&#8249;</button>
+            <button onclick="showNextSlide()">&#8250;</button>
         </div>
     </section>
 
