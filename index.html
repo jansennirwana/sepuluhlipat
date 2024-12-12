@@ -136,6 +136,7 @@
             const slides = document.querySelectorAll('.hero-item');
             const totalSlides = slides.length;
             let currentIndex = 0;
+            let interval;
 
             function updateCarousel() {
                 carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -151,10 +152,27 @@
                 updateCarousel();
             }
 
-            document.querySelector('.next-btn').addEventListener('click', showNextSlide);
-            document.querySelector('.prev-btn').addEventListener('click', showPrevSlide);
+            function startAutoSlide() {
+                interval = setInterval(showNextSlide, 5000);
+            }
 
-            setInterval(showNextSlide, 5000);
+            function stopAutoSlide() {
+                clearInterval(interval);
+            }
+
+            document.querySelector('.next-btn').addEventListener('click', () => {
+                stopAutoSlide();
+                showNextSlide();
+                startAutoSlide();
+            });
+
+            document.querySelector('.prev-btn').addEventListener('click', () => {
+                stopAutoSlide();
+                showPrevSlide();
+                startAutoSlide();
+            });
+
+            startAutoSlide();
         });
     </script>
 </head>
