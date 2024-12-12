@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sepuluhlipat | Smarter Investing</title>
-   <link rel="stylesheet" href="swiper-bundle.min.css">
-   <script src="swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="swiper-bundle.min.css">
     <style>
         * {
             margin: 0;
@@ -49,14 +48,33 @@
             background-position: center;
             color: white;
             flex-direction: column;
+            position: relative;
+        }
+        .swiper-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .swiper-slide h1,
+        .swiper-slide p,
+        .swiper-slide button {
+            position: relative;
+            z-index: 2;
         }
         .swiper-slide h1 {
             font-size: 3rem;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         .swiper-slide p {
             font-size: 1.5rem;
             margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         .swiper-slide button {
             background-color: #38a1db;
@@ -175,7 +193,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper-container', {
             loop: true,
