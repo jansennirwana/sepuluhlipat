@@ -35,7 +35,12 @@
         nav a:hover {
             text-decoration: underline;
         }
-        .swiper-container {
+        .swiper-container.main-carousel {
+    width: 100%;
+    height: 800px;
+}
+
+.swiper-container.user-quotes {
     width: 100%;
     height: auto;
 }
@@ -192,7 +197,7 @@
         </nav>
     </header>
 
-    <div class="swiper-container">
+    <div class="swiper-container main-carousel">
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="background-image: url('Carousel-1-Stock Optimizer.jpeg');">
                 <h1>Optimize Your Portfolio</h1>
@@ -221,7 +226,7 @@
     </div>
 
     <div class="user-quotes-container">
-        <div class="swiper-container">
+        <div class="swiper-container user-quotes">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" style="background-image: url('User-quote-snapshot-1.jpeg');">
                     <p class="quote-text">"Sepuluhlipat has completely transformed how I manage my investments. My portfolio now yields better returns thanks to its intelligent stock optimizer!" - Budi Santoso</p>
