@@ -134,19 +134,13 @@
 
     <script>
         document.querySelectorAll('.pricing-card button').forEach(button => {
-            button.addEventListener('click', (event) => {
-                const buttonText = event.target.previousElementSibling?.textContent;
-                switch (true) {
-                    case buttonText.includes('1% AUM'):
-                        alert('Thank you for your interest! Investment functionality is coming soon.');
-                        break;
-                    default:
-                        alert('Thank you for your interest! Subscription functionality is coming soon.');
-                        break;
+            button.addEventListener('click', () => {
+                if (event.target.previousElementSibling?.textContent.includes('1% AUM')) {
+                    alert('Thank you for your interest! Investment functionality is coming soon.');
+                } else {
+                    alert('Thank you for your interest! Subscription functionality is coming soon.');
                 }
             });
-        });
-        });
         });
     </script>
 </body>
